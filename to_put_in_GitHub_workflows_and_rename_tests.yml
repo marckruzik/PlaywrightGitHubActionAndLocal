@@ -1,0 +1,49 @@
+name: Test
+
+on:
+  pull_request:
+    branches:
+      - main
+
+env:
+  DOTNET_VERSION: '8.0.x'
+
+jobs:
+  test_job:
+    if: github.event_name == 'pull_request'
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    name: Test Job
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+          lfs: false
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+      - name: Restore Dependencies
+        run: dotnet restore
+      - name: Restore Workload
+        run: dotnet workload restore
+      - name: Build Project
+        run: dotnet build --configuration Release --no-restore
+      - name: List all files (for debug purposes)
+        run: find . -print
+      - name: Ensure browsers are installed
+        run: pwsh -Command "& (gci -Recurse -Filter 'playwright.ps1' | Select-Object -ExpandProperty FullName -First 1) install --with-deps"
+      - name: Run Tests
+        run: dotnet test --no-restore --verbosity normal
+        
+      - name: Merge pull request if tests pass
+        if: success()
+        run: gh pr merge --merge --auto "${{ github.event.pull_request.number }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Close pull request if tests fail
+        if: failure()
+        run: gh pr close --comment "Tests failed, Pull Request closed" "${{ github.event.pull_request.number }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
