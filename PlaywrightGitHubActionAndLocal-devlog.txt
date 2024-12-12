@@ -1,0 +1,7 @@
+11 december 2024 : 14H00-15H45 17H45-18H30
+- Puzzlor, rework TestServerFixture
+- nuget local
+
+12 december 2024 : 15H20-17H00
+- agnostic yml
+- nuget local
