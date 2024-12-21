@@ -5,3 +5,7 @@
 12 december 2024 : 15H20-17H00
 - agnostic yml
 - nuget local
+
+21 december 2024 : 17H15-17H30 18H00-
+- logo
+- readme
