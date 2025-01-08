@@ -10,3 +10,11 @@
 - logo
 - readme
 - realize that running Playwright tests locally is already a project by itself
+
+08 january 2025 : 14H45-16H30
+- readme
+- nuspec, doc reading
+- csproj, package info
+- realize that nuget has no official way to copy a file in the source
+- demo Blazor app
+- test project
