@@ -131,7 +131,7 @@ namespace PlaywrightGitHubLocal
         public new IPage Page;
 
         [SetUp]
-        public virtual async Task Setup()
+        public async Task PlayGalPageTestSetup()
         {
             var contextOptions = new BrowserNewContextOptions
             {
