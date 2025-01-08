@@ -6,7 +6,7 @@ using NUnit.Framework;
 
 namespace PlaywrightGitHubLocal
 {
-    public partial class TestServerFixture : PageTest, IDisposable
+    public partial class PlayGalPageTest : PageTest, IDisposable
     {
         public Uri RootUri { get; private set; } = new("https://localhost:7128/");
 
@@ -126,9 +126,9 @@ namespace PlaywrightGitHubLocal
         }
     }
 
-    public partial class TestServerFixture : PageTest
+    public partial class PlayGalPageTest : PageTest
     {
-        protected IPage page;
+        public new IPage Page;
 
         [SetUp]
         public virtual async Task Setup()
@@ -138,7 +138,7 @@ namespace PlaywrightGitHubLocal
                 IgnoreHTTPSErrors = true
             };
             var context = await Browser.NewContextAsync(contextOptions);
-            page = await context.NewPageAsync();
+            Page = await context.NewPageAsync().ConfigureAwait(false);
         }
     }
 }
