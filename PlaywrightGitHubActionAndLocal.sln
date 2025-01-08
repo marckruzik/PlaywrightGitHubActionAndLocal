@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaywrightGitHubActionAndLocal", "PlaywrightGitHubActionAndLocal\PlaywrightGitHubActionAndLocal.csproj", "{31B73B59-861C-4A06-B957-8230DE7D718B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaywrightGitHubActionAndLocal", "PlaywrightGitHubActionAndLocal\PlaywrightGitHubActionAndLocal.csproj", "{31B73B59-861C-4A06-B957-8230DE7D718B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoBlazorApp", "DemoBlazorApp\DemoBlazorApp.csproj", "{150C2C07-9AE0-4AED-93C3-A0B85A17CFB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlaywrightDemoBlazorApp", "TestPlaywrightDemoBlazorApp\TestPlaywrightDemoBlazorApp.csproj", "{EE867664-761E-4AA1-8B2D-11FE630561B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{31B73B59-861C-4A06-B957-8230DE7D718B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31B73B59-861C-4A06-B957-8230DE7D718B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31B73B59-861C-4A06-B957-8230DE7D718B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{150C2C07-9AE0-4AED-93C3-A0B85A17CFB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{150C2C07-9AE0-4AED-93C3-A0B85A17CFB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{150C2C07-9AE0-4AED-93C3-A0B85A17CFB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{150C2C07-9AE0-4AED-93C3-A0B85A17CFB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE867664-761E-4AA1-8B2D-11FE630561B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE867664-761E-4AA1-8B2D-11FE630561B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE867664-761E-4AA1-8B2D-11FE630561B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE867664-761E-4AA1-8B2D-11FE630561B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
