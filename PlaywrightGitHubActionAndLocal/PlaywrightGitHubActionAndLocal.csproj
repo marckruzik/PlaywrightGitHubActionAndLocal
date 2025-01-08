@@ -6,8 +6,28 @@
     <Nullable>enable</Nullable>
     <OutputType>Library</OutputType>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>0.0.1</Version>
+    <Version>0.0.0-alpha01</Version>
+    <Authors>MarcKruzik</Authors>
+    <Description>Run Playwright NUnit tests on local, and on with GitHub actions before merging to your main branch. Needs no pre-production environment, runs directly on local Windows and GitHub Ubuntu runner.</Description>
+    <PackageProjectUrl>https://github.com/marckruzik/PlaywrightGitHubActionAndLocal</PackageProjectUrl>
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/marckruzik/PlaywrightGitHubActionAndLocal</RepositoryUrl>
+    <PackageTags>playwright;test;testing;E2E;automation;local;GitHub Action;automatic;blazor;playgal;headless;NUnit</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageId>Playwright.GitHub.Action.And.Local</PackageId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\logo\logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Playwright.NUnit" Version="1.27.1" />
