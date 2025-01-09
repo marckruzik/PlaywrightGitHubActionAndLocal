@@ -19,7 +19,8 @@
 - demo Blazor app
 - test project
 
-09 january 2025 : 11H15-13H15
+09 january 2025 : 11H15-13H15 18H00-18H45
 - .targets file
 - MSBuild Inline Task with C# code
 - MSBuild Inline Task, output parameter
+- realize that there is an old way (content, that copies files) and a new way (contentFiles, that provide links to files (?)). It is not clear if the new way makes the files appear on Visual Studio, or hides them.
