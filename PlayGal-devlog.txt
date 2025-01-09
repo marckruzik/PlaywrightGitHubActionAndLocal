@@ -18,3 +18,8 @@
 - realize that nuget has no official way to copy a file in the source
 - demo Blazor app
 - test project
+
+09 january 2025 : 11H15-13H15
+- .targets file
+- MSBuild Inline Task with C# code
+- MSBuild Inline Task, output parameter
