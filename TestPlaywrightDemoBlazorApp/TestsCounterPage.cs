@@ -7,7 +7,7 @@ namespace TestPlaywrightDemoBlazorApp
     public class TestsCounterPage : PlayGalPageTest
     {
         [SetUp]
-        public async new Task Setup()
+        public async Task Setup()
         {
             await Page.GotoAsync($"{RootUri.AbsoluteUri}Counter");
         }
