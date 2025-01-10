@@ -24,3 +24,9 @@
 - MSBuild Inline Task with C# code
 - MSBuild Inline Task, output parameter
 - realize that there is an old way (content, that copies files) and a new way (contentFiles, that provide links to files (?)). It is not clear if the new way makes the files appear on Visual Studio, or hides them.
+
+10 january 2025 : 9H30-12H00
+- use build folder to contain the yml file
+- targets, tasks with conditions
+
+
