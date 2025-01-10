@@ -25,8 +25,11 @@
 - MSBuild Inline Task, output parameter
 - realize that there is an old way (content, that copies files) and a new way (contentFiles, that provide links to files (?)). It is not clear if the new way makes the files appear on Visual Studio, or hides them.
 
-10 january 2025 : 9H30-12H00
+10 january 2025 : 9H30-12H00 14H45-16H30
 - use build folder to contain the yml file
+- use build folder to contain the targets file
+- csproj, modify to add Include="build/*" Pack="true" PackagePath="build/"
+- targets, rename with id of nuget
 - targets, tasks with conditions
-
-
+- nuget, publish
+- repo, visibility, public
