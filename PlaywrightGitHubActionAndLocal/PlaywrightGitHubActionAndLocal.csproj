@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <OutputType>Library</OutputType>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>1.0.0-rc.1</Version>
+    <Version>1.0.0</Version>
     <Authors>MarcKruzik</Authors>
     <Description>Run Playwright NUnit tests on local, and on GitHub Actions before merging your pull request to your main branch. Needs no pre-production environment, runs directly on local (at least Windows) and on GitHub runner (at least Ubuntu).</Description>
     <PackageProjectUrl>https://github.com/marckruzik/PlaywrightGitHubActionAndLocal</PackageProjectUrl>
