@@ -8,7 +8,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Version>0.0.0-alpha01</Version>
     <Authors>MarcKruzik</Authors>
-    <Description>Run Playwright NUnit tests on local, and on GitHub actions before merging to your main branch. Needs no pre-production environment, runs directly on local (at least Windows) and GitHub runner (at least Ubuntu).</Description>
+    <Description>Run Playwright NUnit tests on local, and on GitHub Actions before merging your pull request to your main branch. Needs no pre-production environment, runs directly on local (at least Windows) and on GitHub runner (at least Ubuntu).</Description>
     <PackageProjectUrl>https://github.com/marckruzik/PlaywrightGitHubActionAndLocal</PackageProjectUrl>
     <PackageIcon>logo.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
