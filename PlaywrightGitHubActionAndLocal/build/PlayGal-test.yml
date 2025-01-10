@@ -1,4 +1,4 @@
-name: Test
+name: PlayGal Playwright NUnit Tests
 
 on:
   pull_request:
