@@ -1,4 +1,4 @@
-using PlaywrightGitHubLocal;
+using PlayGal;
 
 namespace TestPlaywrightDemoBlazorApp
 {

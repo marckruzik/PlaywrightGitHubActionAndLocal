@@ -4,7 +4,7 @@ using Microsoft.Playwright;
 using Microsoft.Playwright.NUnit;
 using NUnit.Framework;
 
-namespace PlaywrightGitHubLocal
+namespace PlayGal
 {
     public partial class PlayGalPageTest : PageTest, IDisposable
     {
