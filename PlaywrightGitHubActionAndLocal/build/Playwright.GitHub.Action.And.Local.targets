@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <UsingTask TaskName="MyInlineTask"
+  <PropertyGroup>
+    <RepoRoot></RepoRoot>
+  </PropertyGroup>
+  <UsingTask TaskName="FindRepoRoot"
               TaskFactory="RoslynCodeTaskFactory"
               AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
     <ParameterGroup>
@@ -19,21 +22,41 @@
           RepoRoot = dir ?? string.Empty;
           if(string.IsNullOrEmpty(RepoRoot) == false)
           {
-              Log.LogMessage(MessageImportance.High, "Found repository root: " + RepoRoot);
+              Log.LogMessage(MessageImportance.High, "Found RepoRoot: " + RepoRoot);
           }
           else
           {
-              Log.LogError($"Cannot find .git directory in a parent path of {StartDirectory}");
+              Log.LogError($"Cannot set RepoRoot by finding .git directory in a parent path of {StartDirectory}");
           }
          ]]>
       </Code>
     </Task>
   </UsingTask>
 
-  <Target Name="MyTasks" AfterTargets="AfterBuild">
-    <MyInlineTask StartDirectory="$(MSBuildProjectDirectory)">
-      <Output PropertyName="Sum" TaskParameter="RepoRoot" />
-    </MyInlineTask>
-     <Message Text="The sum is $(Sum)" Importance="High" />
+  <Target Name="FindRepoRootTask" AfterTargets="AfterBuild">
+    <FindRepoRoot StartDirectory="$(MSBuildProjectDirectory)">
+      <Output PropertyName="RepoRoot" TaskParameter="RepoRoot" />
+    </FindRepoRoot>
+    <Error Condition="!Exists('$(RepoRoot)') OR '$(RepoRoot)' == ''" Text="RepoRoot is invalid or not found. Stopping execution." />
+  </Target>
+
+  <Target Name="CopyTask" AfterTargets="FindRepoRootTask">
+    <Message Text="The RepoRoot is $(RepoRoot)" Importance="High" />
+	
+    <PropertyGroup>
+      <DestinationFile>$(RepoRoot)/.github/workflows/PlayGal-test.yml</DestinationFile>
+      <DestinationFileExist Condition="Exists('$(DestinationFile)')">true</DestinationFileExist>
+      <DestinationFileExist Condition="!Exists('$(DestinationFile)')">false</DestinationFileExist>
+    </PropertyGroup>
+	
+    <Message Text="Workflow file exists, no copy to: $(DestinationFile)" Importance="High" 
+	  Condition="$(DestinationFileExist)" />
+	
+    <Copy
+      SourceFiles="$(MSBuildThisFileDirectory)PlayGal-test.yml"
+      DestinationFiles="$(DestinationFile)"
+      Condition="!$(DestinationFileExist)" />
+    <Message Text="Workflow file does not exist, copy to: $(DestinationFile)" Importance="High" 
+	  Condition="!$(DestinationFileExist)" />
   </Target>
 </Project>
